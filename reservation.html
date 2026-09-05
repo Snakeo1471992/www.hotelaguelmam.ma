@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Réservation — Hôtel Agelmam</title>
+<meta name="description" content="Réservez votre séjour à l'Hôtel Agelmam. Confirmation immédiate par email ou WhatsApp.">
+<meta property="og:title" content="Réservation — Hôtel Agelmam">
+<meta property="og:description" content="Réservez votre séjour à l'Hôtel Agelmam. Confirmation immédiate par email ou WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site" id="siteHeader">
+  <div class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-logo">A</span>
+      <span class="brand-name"><span class="n">AGELMAM</span><span class="s">Hôtel · Maroc</span></span>
+    </a>
+    <nav class="nav-links"><a href="index.html" class="">Accueil</a><a href="a-propos.html" class="">À Propos</a><a href="chambres.html" class="">Chambres</a><a href="restaurant.html" class="">Restaurant</a><a href="galerie.html" class="">Galerie</a><a href="services.html" class="">Services</a><a href="contact.html" class="">Contact</a></nav>
+    <a href="reservation.html" class="btn btn-red nav-cta" style="padding:.7rem 1.5rem">Réserver</a>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu"><a href="index.html">Accueil</a><a href="a-propos.html">À Propos</a><a href="chambres.html">Chambres</a><a href="restaurant.html">Restaurant</a><a href="galerie.html">Galerie</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="reservation.html" style="color:var(--red-light);margin-top:.5rem">Réserver →</a></div>
+</header>
+<section class="page-hero">
+  <img class="bg" src="images/courtyard.jpg" alt="">
+  <span class="eyebrow">Réservation</span>
+  <h1>Réservez votre <span class="red-text">séjour</span></h1>
+  <p>Confirmation immédiate par email ou WhatsApp.</p>
+</section>
+<section class="pad container reveal">
+  <form class="res" id="resForm" novalidate>
+    <div class="row">
+      <div><label>Nom complet</label><input name="name" required minlength="2"><div class="field-error" data-for="name"></div></div>
+      <div><label>Email</label><input type="email" name="email" required><div class="field-error" data-for="email"></div></div>
+    </div>
+    <div class="row">
+      <div><label>Téléphone</label><input type="tel" name="phone" required minlength="6"><div class="field-error" data-for="phone"></div></div>
+      <div><label>Type de chambre</label>
+        <select name="room" required>
+          <option value="">— Choisir —</option>
+          <option value="Classique|500">Classique — 500 MAD</option>
+          <option value="Deluxe|600">Deluxe — 600 MAD</option>
+          <option value="Suite|800">Suite Signature — 800 MAD</option>
+        </select><div class="field-error" data-for="room"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div><label>Arrivée</label><input type="date" name="checkin" required><div class="field-error" data-for="checkin"></div></div>
+      <div><label>Départ</label><input type="date" name="checkout" required><div class="field-error" data-for="checkout"></div></div>
+    </div>
+    <div class="row">
+      <div><label>Adultes</label><input type="number" name="adults" min="1" max="6" value="2" required></div>
+      <div><label>Enfants</label><input type="number" name="children" min="0" max="6" value="0"></div>
+    </div>
+    <div><label>Message (optionnel)</label><textarea name="message" rows="4"></textarea></div>
+    <button type="submit" class="btn btn-red">Générer le récapitulatif</button>
+    <div class="summary" id="summary" style="display:none">
+      <h3>Récapitulatif de réservation</h3>
+      <div id="summaryLines"></div>
+      <div class="total" id="summaryTotal"></div>
+      <div class="actions">
+        <a id="mailtoLink" class="btn btn-outline" href="#">Envoyer par Email</a>
+        <a id="waLink" class="btn btn-red" href="#" target="_blank" rel="noopener">Envoyer par WhatsApp</a>
+      </div>
+    </div>
+  </form>
+</section>
+<footer class="site">
+  <div class="cols">
+    <div>
+      <div class="brand" style="margin-bottom:1rem"><span class="brand-logo">A</span><span class="brand-name"><span class="n">AGELMAM</span></span></div>
+      <p style="color:#a5a5a5;font-size:.88rem">Un refuge d'élégance au cœur du Maroc. L'art de l'hospitalité, sublimé.</p>
+    </div>
+    <div><h4>Navigation</h4><ul>
+      <li><a href="a-propos.html">À Propos</a></li>
+      <li><a href="chambres.html">Chambres</a></li>
+      <li><a href="restaurant.html">Restaurant</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="services.html">Services</a></li>
+    </ul></div>
+    <div><h4>Contact</h4><ul>
+      <li>📍 N, Bv, 355 Bis Ave Zerktouni, Khénifra 54000</li>
+      <li>📞 +2126 61 84 93 19</li>
+      <li>✉ contact@aguelmam.ma</li>
+    </ul></div>
+    <div><h4>Suivez-nous</h4>
+      <div class="socials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="Facebook">FB</a></div>
+      <p style="color:#888;font-size:.75rem;margin-top:1rem">Offres exclusives par email.</p>
+    </div>
+  </div>
+  <div class="bottom">© 2026 Hôtel Aguelmam · Luxe · Élégance · Authenticité by HTmarketing</div>
+</footer>
+<a href="https://wa.me/61849319" class="wa-float" aria-label="WhatsApp" target="_blank" rel="noopener">💬</a>
+<div class="lb" id="lightbox"><button class="close" id="lbClose">×</button><img id="lbImg" alt=""></div>
+<script src="js/main.js"></script>
+</body></html>

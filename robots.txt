@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agelmam.ma/sitemap.xml
